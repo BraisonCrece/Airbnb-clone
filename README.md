@@ -11,6 +11,7 @@ I will use:
 * Turbo
 
 How to:
+**Before start, must have installed rails 7 and Ruby 3.2.1**
 1. clone repository:
 
     `git clone https://github.com/BraisonCrece/Airbnb-clone`
