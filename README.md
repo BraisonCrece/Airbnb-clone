@@ -6,13 +6,14 @@ I am following [TypeFast project on Youtube](https://www.youtube.com/playlist?li
 I will use:
 * Ruby on Rails --> 7.0.4
 * Ruby --> 3.1.2p20
+* PostgreSQL
 * TailWind + TailWindUI
 * StimulusJS
 * Turbo
 
 How to:
 
-**Before start, must have installed rails 7 and Ruby 3.2.1**
+**Before start, must have installed rails 7 ,Ruby 3.2.1 and PostgreSQL**
 1. clone repository:
 
     `git clone https://github.com/BraisonCrece/Airbnb-clone`
