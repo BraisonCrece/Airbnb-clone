@@ -105,6 +105,9 @@ GEM
       activesupport (>= 5.0)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
+    image_processing (1.12.2)
+      mini_magick (>= 4.9.5, < 5)
+      ruby-vips (>= 2.0.17, < 3)
     importmap-rails (1.1.5)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
@@ -121,6 +124,7 @@ GEM
       mini_mime (>= 0.1.1)
     marcel (1.0.2)
     method_source (1.0.0)
+    mini_magick (4.11.0)
     mini_mime (1.1.2)
     minitest (5.16.3)
     monetize (1.12.0)
@@ -213,6 +217,8 @@ GEM
       rspec-mocks (~> 3.10)
       rspec-support (~> 3.10)
     rspec-support (3.11.1)
+    ruby-vips (2.1.4)
+      ffi (~> 1.12)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -266,6 +272,7 @@ DEPENDENCIES
   factory_bot_rails
   faker!
   geocoder
+  image_processing (~> 1.2)
   importmap-rails
   jbuilder
   money-rails (~> 1.12)

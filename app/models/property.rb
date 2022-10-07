@@ -12,6 +12,8 @@ class Property < ApplicationRecord
   geocoded_by :address
   after_validation :geocode , if: -> { latitude.blank? && longitude.blank? }
 
+  has_many_attached :images, dependent: :destroy
+
   def address
     # the comment below is the option for be used with real data
     # [address_1, address_2, city, state, country].compact.join(', ')
@@ -19,4 +21,9 @@ class Property < ApplicationRecord
     # I'll be using the once below becase I'm using Faker data
     [state, country].compact.join(', ')
   end
+
+  def default_image
+    images.first
+  end
+
 end

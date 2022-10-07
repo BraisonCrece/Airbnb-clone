@@ -7,6 +7,7 @@ gem "bootsnap", require: false
 gem "devise"
 gem "geocoder"
 gem "jbuilder"
+gem "image_processing", "~> 1.2"
 gem "importmap-rails"
 gem "money-rails", "~>1.12"
 gem "pg", "~> 1.1"
@@ -25,12 +26,6 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
-
-# Use Sass to process CSS
-# gem "sassc-rails"
-
-# Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
