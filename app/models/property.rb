@@ -14,6 +14,8 @@ class Property < ApplicationRecord
 
   has_many_attached :images, dependent: :destroy
 
+  has_many :reviews, as: :reviewable
+
   def address
     # the comment below is the option for be used with real data
     # [address_1, address_2, city, state, country].compact.join(', ')
@@ -24,6 +26,10 @@ class Property < ApplicationRecord
 
   def default_image
     images.first
+  end
+  
+  def average_rating
+    reviews.average(:rating)
   end
 
 end

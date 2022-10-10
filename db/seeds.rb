@@ -13,4 +13,8 @@
 
   property.images.attach(io: File.open(Rails.root.join("db","sample","images","property_#{i + 1}.png")), filename: property.name)
 
+  (1..5).to_a.sample.times do
+    Review.create(reviewable: property, rating: (1..5).to_a.sample, title: Faker::Lorem.word, body: Faker::Lorem.paragraph)
+  end
+
 end
