@@ -28,8 +28,10 @@ class Property < ApplicationRecord
     images.first
   end
   
-  def average_rating
-    reviews.average(:rating)
-  end
+  # Now we have a method to calculate the average on each :create, :update
+  # property rating, so we don't need this method :)
+  # def average_rating
+  #   reviews.average(:rating)
+  # end
 
 end
