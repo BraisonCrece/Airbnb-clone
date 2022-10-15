@@ -62,6 +62,9 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  # Devise helper method to testing purpose
+  config.include Devise::Test::IntegrationHelpers, type: :request # Rails >= 5
 end
 
 Shoulda::Matchers.configure do |config|

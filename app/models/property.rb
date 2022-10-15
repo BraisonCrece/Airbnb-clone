@@ -16,6 +16,14 @@ class Property < ApplicationRecord
 
   has_many :reviews, as: :reviewable
 
+  has_many :favorites, dependent: :destroy
+  has_many :favorited_users, through: :favorites,  source: :user
+    # wen we reffer "favorited_properties", Rails doesn't know what that means, because
+    # we don't have a model that's called "favorited_users". But, with the options
+    # "through: :favorites,  source: :user", Rails knows:
+    # ** Ok, we are going through the favorites table and the sources this belongs
+    #    to property, so I know that i'm going to look for **
+
   def address
     # the comment below is the option for be used with real data
     # [address_1, address_2, city, state, country].compact.join(', ')
