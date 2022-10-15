@@ -17,19 +17,26 @@
           <button type="button" class="absolute inset-0 focus:outline-none">
             <span class="sr-only">View details for IMG_4985.HEIC</span>
           </button>
+
           <div class="flex flex-row-reverse">
             <!-- In the svg heart image below, let's define three Stimulus js attributes: 'data-favorited', 'data action', 'data-controller' , 
                  where we will define the js controller that should be called when clicked -->
             <svg 
-              xmlns="http://www.w3.org/2000/svg"
-              data-controller="favorites"
-              data-favorited="false"
-              data-action="click->favorites#favorite"
-              fill="#ced4da"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-7 h-7 cursor-pointer mt-2 mr-2"
+              xmlns = "http://www.w3.org/2000/svg"
+              data-controller = "favorites"
+              data-user-logged-in = "<%= user_signed_in? %>"
+              data-user-id = "<%= current_user.id %>"
+              data-property-id = "<%= property.id %>"
+              data-favorite-url = " <%= api_favorites_path %> "
+              data-unfavorite-url = " <%= api_favorite_path(current_user.favorites.find_by(property: property)) if current_user&.favorited_properties.include?(property) %> "
+              data-favorite-id = "<%= current_user.favorites.find_by(property: property).id if current_user&.favorited_properties.include?(property) %>"
+              data-favorited = "<%= current_user&.favorites.where(property: property).exists? %>"
+              data-action = "click->favorites#favorite"
+              fill = "<%= current_user&.favorited_properties.include?(property) ? 'red' : '#ced4da' %>"
+              viewBox = "0 0 24 24"
+              stroke-width = "1.5"
+              stroke = "currentColor"
+              class = "w-7 h-7 cursor-pointer mt-2 mr-2"
             >
               <path 
                 stroke-linecap="round"
