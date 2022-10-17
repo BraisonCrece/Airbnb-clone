@@ -36,10 +36,9 @@ class Property < ApplicationRecord
     images.first
   end
   
-  # Now we have a method to calculate the average on each :create, :update
-  # property rating, so we don't need this method :)
-  # def average_rating
-  #   reviews.average(:rating)
-  # end
+  def favorited_by?(user)
+    return if user.nil?
+    favorited_users.include?(user)
+  end
 
 end

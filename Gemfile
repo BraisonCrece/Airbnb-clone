@@ -7,6 +7,7 @@ gem "bootsnap", require: false
 gem "devise"
 gem "geocoder"
 gem "jbuilder"
+gem 'jsonapi-serializer'
 gem "image_processing", "~> 1.2"
 gem "importmap-rails"
 gem "money-rails", "~>1.12"
