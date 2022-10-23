@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Alquileres vacacionales, cabañas, casas en la playa, alojamientos únicos y experiencias</title>
+    <title>Vacation Homes & Condo Rentals - Airbnb - Airbnb</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-    <%= favicon_link_tag asset_path('airbnb-favicon.png') %>
+
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= favicon_link_tag asset_path("airbnb-favicon.png") %>
   </head>
 
   <body>
-    <%= render 'layouts/header' %>
+    <%= render "layouts/header" %>
     <%= yield %>
   </body>
 </html>

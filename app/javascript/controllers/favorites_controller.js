@@ -31,11 +31,11 @@ export default class extends Controller {
     }, {
       headers: this.HEADERS
     })
-      .then((response) => {
-        this.element.dataset.favorited = 'true'
-        this.element.dataset.favoriteId = response.data.id;
-        this.element.setAttribute('fill', 'red');
-      });
+    .then((response) => {
+      this.element.dataset.favorited = 'true'
+      this.element.dataset.favoriteId = response.data.id;
+      this.element.setAttribute('fill', 'red');
+    });
   }
 
   unfavoriteProperty() {

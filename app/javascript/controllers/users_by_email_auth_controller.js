@@ -1,22 +1,21 @@
-import { Controller } from '@hotwired/stimulus'
-import axios from 'axios'
+import { Controller } from '@hotwired/stimulus';
+import axios from 'axios';
 
 export default class extends Controller {
-  static targets = ['email','emailWrapper','invalidSvg','errorMessage','submit']
-  connect() {
-    console.log('axios: ', axios)    
-    this.submitTarget.addEventListener('click', (e) => {
-      e.preventDefault()
+  static targets = ['email', 'emailWrapper', 'invalidSvg', 'errorMessage', 'submit'];
 
-      if(this.emailTarget.value.length === 0) {
-        // email field is empty so don't do anything
-        this.emailWrapperTarget.classList.add('invalid-inset-input-text-field')
-        this.emailWrapperTarget.classList.remove('shadow-sm',
-                                                 'focus-within:ring-1',
-                                                 'focus-within:ring-black',
-                                                 'focus-within:border-black')
-        this.invalidSvgTarget.classList.remove('hidden')
-        this.errorMessageTarget.classList.remove('hidden')
+  connect() {
+    this.submitTarget.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      if (this.emailTarget.value.length === 0) {
+        // email field is empty, so don't do anything
+        this.emailWrapperTarget.classList.add('invalid-inset-input-text-field');
+        this.emailWrapperTarget.classList.remove('focus-within:ring-1');
+        this.emailWrapperTarget.classList.remove('focus-within:ring-black');
+        this.emailWrapperTarget.classList.remove('focus-within:border-black');
+        this.invalidSvgTarget.classList.remove('hidden');
+        this.errorMessageTarget.classList.remove('hidden');
       } else {
         // email field is filled out, so do something
         axios.get('/api/users_by_email', {
@@ -24,14 +23,18 @@ export default class extends Controller {
             email: this.emailTarget.value
           },
           headers: {
-            'ACCEPT' : 'application/json'
+            'ACCEPT': 'application/json'
           }
         }).then((response) => {
-          Turbo.visit('/users/sign_in')
+          Turbo.visit('/users/sign_in');
         }).catch((response) => {
-          Turbo.visit('/users/sign_up')
+          Turbo.visit('/users/sign_up');
         })
       }
-    })
+    });
+  }
+
+  submitForm() {
+    console.log('aasdofijsiodjf');
   }
 }

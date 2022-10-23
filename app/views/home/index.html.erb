@@ -18,6 +18,7 @@
             <button type="button" class="absolute inset-0 focus:outline-none">
               <span class="sr-only">View details for IMG_4985.HEIC</span>
             </button>
+
             <div class="flex flex-row-reverse p-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -31,9 +32,9 @@
                 data-action="click->favorites#favorite"
                 fill="<%= property.favorited_by?(current_user) ? 'red' : '#ced4da' %>"
                 viewBox="0 0 24 24"
-                stroke="white"
-                stroke-width="1"
-                >
+                stroke="currentColor"
+                stroke-width="2"
+              >
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
               </svg>
             </div>
@@ -46,7 +47,7 @@
             </svg>
           </p>
           <p data-distance-away class="block text-sm font-medium text-gray-500 pointer-events-none"></p>
-          <p class="block text-sm font-medium text-gray-500 pointer-events-none">Jun 19 - 24</p>
+          <p class="block text-sm font-medium text-gray-500 pointer-events-none"><%= property.available_dates.first %> - <%= property.available_dates.last %></p>
           <p class="block text-sm font-medium text-gray-500 pointer-events-none"><span class="text-black"><%= humanized_money_with_symbol(property.price) %></span> per night</p>
         </li>
       <% end %>

@@ -93,11 +93,11 @@
             <!-- Active: "bg-gray-100", Not Active: "" -->
             <div class="py-1" role="none">
               <% if user_signed_in? %>
-                <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: "delete" }, class: "block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100"  %>
+                <%= link_to "Log out", destroy_user_session_path, data: { "turbo-method": :delete }, class: "block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100" %>
               <% else %>
                 <a href="#" data-header-target="userAuthLink" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1" id="user-menu-item-0">Sign Up</a>
                 <a href="#" data-header-target="userAuthLink" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1" id="user-menu-item-1">Log in</a>
-              <% end %>              
+              <% end %>
             </div>
 
             <div class="py-1" role="none">
@@ -141,4 +141,4 @@
   </nav>
 </header>
 
-<%= render "shared/modal", modal_content: "home/user_auth_form" %>
+<%= render "shared/modal", modal_trigger_id: "user-auth-modal-trigger", modal_content: "home/user_auth_form" %>
