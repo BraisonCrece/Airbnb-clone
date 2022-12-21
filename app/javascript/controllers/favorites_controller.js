@@ -4,7 +4,8 @@ import axios from 'axios';
 export default class extends Controller {
   HEADERS = { 'ACCEPT': 'application/json' };
 
-  favorite() {
+  favorite(e) {
+    e.preventDefault();
     if (this.element.dataset.userLoggedIn === 'false') {
       return document.querySelector('[data-header-target="userAuthLink"]').click();
     }
@@ -31,11 +32,11 @@ export default class extends Controller {
     }, {
       headers: this.HEADERS
     })
-    .then((response) => {
-      this.element.dataset.favorited = 'true'
-      this.element.dataset.favoriteId = response.data.id;
-      this.element.setAttribute('fill', 'red');
-    });
+      .then((response) => {
+        this.element.dataset.favorited = 'true'
+        this.element.dataset.favoriteId = response.data.id;
+        this.element.setAttribute('fill', this.element.dataset.favoritedColor);
+      });
   }
 
   unfavoriteProperty() {
@@ -44,7 +45,7 @@ export default class extends Controller {
     }).then((response) => {
       this.element.dataset.favorited = 'false'
       this.element.dataset.favoriteId = '';
-      this.element.setAttribute('fill', '#ced4da');
+      this.element.setAttribute('fill', this.element.dataset.unfavoritedColor);
     });
   }
 }
