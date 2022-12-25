@@ -1,6 +1,6 @@
 <div 
 data-controller="share-modal"
-data-share-url="<%= property_url(@property) %>"
+data-share-url="<%= property_url(content_params[:property]) %>"
 >
   <div class="flex mb-5">
     <div class="flex-none cursor-pointer" data-modal-target="closeButton">
@@ -17,7 +17,7 @@ data-share-url="<%= property_url(@property) %>"
           <img class="h-16 w-16 rounded-lg" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
         </div>
         <div class="flex-1 min-w-0">
-          <p class="text-md font-medium text-gray-900"><%= @property.name %></p>
+          <p class="text-md font-medium text-gray-900"><%= content_params[:property].name %></p>
         </div>
       </div>
     </div>

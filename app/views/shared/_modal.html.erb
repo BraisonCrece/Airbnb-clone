@@ -29,7 +29,6 @@
     data-transition-leave-start="opacity-100"
     data-transition-leave-end="opacity-0"
   ></div>
-
   <div class="fixed z-10 inset-0 overflow-y-auto">
     <div class="flex items-end sm:items-center justify-center min-h-full p-4 text-center sm:p-0">
       <!--
@@ -52,7 +51,7 @@
         data-transition-leave-start="opacity-100 translate-y-0 sm:scale-100"
         data-transition-leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
       >
-        <%= render modal_content %>
+        <%= render modal_content, content_params: content_params %>
       </div>
     </div>
   </div>

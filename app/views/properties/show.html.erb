@@ -245,5 +245,5 @@
     </div>
   </div>
 </div>
-<%= render "shared/modal", modal_trigger_id: "share-modal-trigger", modal_content: "properties/share_property" %>
-<%= render "shared/modal", modal_trigger_id: "property-description-trigger", modal_content: "properties/property_description" %>
+<%= render "shared/modal", modal_trigger_id: "share-modal-trigger", modal_content: "properties/share_property", content_params: { property: @property } %>
+<%= render "shared/modal", modal_trigger_id: "property-description-trigger", modal_content: "properties/property_description", content_params: { property: @property } %>
