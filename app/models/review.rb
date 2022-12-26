@@ -4,6 +4,7 @@ class Review < ApplicationRecord
   validates :rating, presence: true, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 5, only_integer: true}
 
   belongs_to :reviewable, polymorphic: true, counter_cache: true
+  belongs_to :user
 
   # Because each property could have a lot of reviews, we don't want to calculate the average_rating over
   # all records in a single query each time we need. So, to avoid this problem, we will update each avg 
