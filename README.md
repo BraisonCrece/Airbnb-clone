@@ -14,7 +14,7 @@ This project use:
 
 How to:
 
-**Before start, must have installed rails 7 ,Ruby 3.2.1 and PostgreSQL**
+**Before start, must have installed rails 7 ,Ruby 3.1.2 and PostgreSQL**
 1. clone repository:
 
     `git clone https://github.com/BraisonCrece/Airbnb-clone`
